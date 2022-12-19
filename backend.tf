@@ -9,6 +9,5 @@ remote_state {
    storage_account_name = "demeatfstate2022"              # $REPLACE: Adapt to your storage account defined in _init
    container_name       = "tfstate"
    key                  = "${path_relative_to_include()}/terraform.tfstate"
-   access_key           = get_env("EMEA_ARM_ACCESS_KEY")
  }
 }
