@@ -1,7 +1,7 @@
 resource "azurerm_resource_group" "rg" {
   name     = var.rg_name
   location = var.location
-  tags     = var.tags
+  #tags     = var.tags
 }
 
 resource "azurerm_app_service_plan" "plan" {
@@ -15,7 +15,7 @@ resource "azurerm_app_service_plan" "plan" {
   }
 }
 
-resource "azurerm_app_service" "example" {
+resource "azurerm_app_service" "service" {
   name                = var.service_name
   location            = azurerm_resource_group.rg.location
   resource_group_name = azurerm_resource_group.rg.name
