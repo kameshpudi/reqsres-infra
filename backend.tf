@@ -5,6 +5,6 @@ data "terraform_remote_state" "iac_logging" {
     resource_group_name  = "d-emea-iac-tfstate-rg"
     storage_account_name = "demeatfstate2022"
     container_name       = "tfstate"
-    key                  = "${path_relative_to_include()}/terraform.tfstate"
+    key                  = "terraform.tfstate"
   }
 }
