@@ -1,13 +1,10 @@
-remote_state {
- backend = "azurerm"
- generate = {
-   path      = "backend.tf"
-   if_exists = "overwrite_terragrunt"
- }
- config = {
-   resource_group_name  = "d-emea-iac-tfstate-rg" # $REPLACE: Adapt to your resource group defined in _init
-   storage_account_name = "demeatfstate2022"              # $REPLACE: Adapt to your storage account defined in _init
-   container_name       = "tfstate"
-   key                  = "${path_relative_to_include()}/terraform.tfstate"
- }
+data "terraform_remote_state" "iac_logging" {
+  backend = "azurerm"
+
+  config = {
+    resource_group_name  = "d-emea-iac-tfstate-rg"
+    storage_account_name = "demeatfstate2022"
+    container_name       = "tfstate"
+    key                  = "${path_relative_to_include()}/terraform.tfstate"
+  }
 }
