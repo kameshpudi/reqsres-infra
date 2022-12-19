@@ -6,5 +6,6 @@ data "terraform_remote_state" "iac_logging" {
     storage_account_name = "demeatfstate2022"
     container_name       = "tfstate"
     key                  = "terraform.tfstate"
+    access_key           = get_env("ARM_ACCESS_KEY")
   }
 }
