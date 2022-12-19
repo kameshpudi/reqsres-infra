@@ -22,7 +22,7 @@ resource "azurerm_app_service" "service" {
   app_service_plan_id = azurerm_app_service_plan.plan.id
 
   site_config {
-    linuxFxVersion = "PYTHON|3.11"
+    linux_fx_version = "PYTHON|3.11"
   }
 
 }
