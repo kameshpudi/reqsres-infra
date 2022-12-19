@@ -1,11 +1,8 @@
-data "terraform_remote_state" "iac_logging" {
-  backend = "azurerm"
-
-  config = {
+terraform {
+  backend "azurerm" {
     resource_group_name  = "d-emea-iac-tfstate-rg"
     storage_account_name = "demeatfstate2022"
     container_name       = "tfstate"
     key                  = "terraform.tfstate"
-    access_key           = get_env("ARM_ACCESS_KEY")
   }
 }
