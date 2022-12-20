@@ -21,3 +21,8 @@ variable "service_name" {
   type        = string
   default     = "kkreqsres2022"
 }
+variable "stg_name" {
+  description = "Name of the resource group"
+  type        = string
+  default     = "kkreqsresfun2023"
+}
