@@ -15,7 +15,7 @@ resource "azurerm_app_service_plan" "plan" {
     tier = "Dynamic"
     size = "Y1"
   }
-   lifecycle {
+  lifecycle {
     ignore_changes = [
       kind
     ]
